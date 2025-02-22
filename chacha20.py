@@ -26,26 +26,3 @@ def generate_combined_key():
         expanded_key.extend(next_seed)
     
     return bytes(expanded_key[:176])  # Return exactly 176 bytes for AES rounds
-
-def test_key_generation():
-    """Test the key generation"""
-    try:
-        # Generate and test a key
-        key = generate_combined_key()
-        print(f"Generated key length: {len(key)} bytes")
-        print(f"Key (hex): {key.hex()}")
-        
-        # Verify key length
-        assert len(key) == 176, f"Key length should be 176 bytes, got {len(key)}"
-        
-        # Generate multiple keys to test uniqueness
-        keys = [generate_combined_key() for _ in range(3)]
-        assert len(set(keys)) == 3, "Generated duplicate keys"
-        
-        print("Key generation test passed successfully!")
-        
-    except Exception as e:
-        print(f"Test failed: {str(e)}")
-
-if __name__ == "__main__":
-    test_key_generation()

@@ -237,21 +237,21 @@ def display_file_info_user2(filename, file_size_kb, file_type, encrypted_data=No
     container_frame.pack(fill="x", padx=(100, 20), pady=5)
     
     # Create main frame with slight transparency
-    file_frame = tk.Frame(container_frame, bg='#1a1a1aE6', padx=15, pady=10)
+    file_frame = tk.Frame(container_frame, bg='blue', padx=15, pady=10)
     file_frame.pack(anchor="e", fill="x")
     
     # File info with bullet point
-    info_frame = tk.Frame(file_frame, bg='#1a1a1aE6')
+    info_frame = tk.Frame(file_frame, bg='blue')
     info_frame.pack(fill="x", pady=(0,5))
     
-    bullet = tk.Label(info_frame, text="•", fg='white', bg='#1a1a1aE6')
+    bullet = tk.Label(info_frame, text="•", fg='white', bg='blue')
     bullet.pack(side="left", padx=(0,5))
     
     file_info = f"{filename}\n{file_size_kb:.1f} KB, {'ENC' if filename.endswith('.enc') else file_type} File"
     file_label = tk.Label(info_frame, 
                          text=file_info,
                          fg='white',
-                         bg='#1a1a1aE6',
+                         bg='blue',
                          justify="left",
                          font=('Arial', 10))
     file_label.pack(side="left")
